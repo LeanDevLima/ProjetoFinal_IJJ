@@ -2,9 +2,66 @@
 
 Este plano de teste descreve os testes a serem executados no Sistema de Vendas do Instituto Joga Junto, com foco na perspectiva do vendedor. O sistema é composto por uma aplicação frontend construída com React JS, hospedada na AWS Amplify, e utiliza uma estrutura de backend em NodeJS com um banco de dados MySQL versão 8.
 
-**Equipe de QA:** [Inserir nomes da equipe aqui] 👥
+**Equipe de QA:** [Leanderson Lima](https://www.linkedin.com/in/leanderson-dias-de-lima/) 👨🏾‍💻 | [Sara Sara J. M da Cruz](https://www.linkedin.com/in/sara-j-m-da-cruz-08ba19282/) 👩🏾‍💻
 
-**Data de Execução:** [Inserir data de execução aqui] 📅
+**Data de Execução:** 01/10/2023 📅
+
+### Testes da Aplicação Principal 💻
+
+#### 1. Fluxo de Login/Logout 🔑
+
+**Caso de Teste 1:** Realizar login e logout com sucesso na aplicação. 🔓
+
+**Passos:**
+
+1. Abrir a aplicação. 💻
+2. Realizar o login com credenciais válidas. 🔑
+3. Verificar se o login foi bem-sucedido. ✅
+4. Realizar o logout. 🚪
+5. Verificar se o logout foi bem-sucedido. ✅
+
+**Resultado Esperado:** Login e logout são realizados com sucesso. ✅
+
+#### 2. Cadastro de Produto na Aplicação 📦
+
+**Caso de Teste 2:** Cadastrar um novo produto na aplicação. 📦
+
+**Passos:**
+
+1. Realizar o login como vendedor. 👤
+2. Acessar a função de cadastro de produto. 📦
+3. Preencher os detalhes do novo produto. ✍️
+4. Submeter o formulário de cadastro. 📤
+5. Verificar se o produto é cadastrado com sucesso. ✅
+
+**Resultado Esperado:** Novo produto é cadastrado com sucesso. ✅
+
+#### 3. Pesquisa de Produto 🔍
+
+**Caso de Teste 3:** Pesquisar por um produto na aplicação. 🔍
+
+**Passos:**
+
+1. Realizar o login como vendedor. 👤
+2. Acessar a função de pesquisa de produto. 🔍
+3. Inserir um termo de pesquisa válido. ✏️
+4. Verificar se os resultados da pesquisa correspondem ao termo inserido. ✅
+
+**Resultado Esperado:** A pesquisa retorna resultados válidos. ✅
+
+#### 4. Filtragem de Produtos 📅
+
+**Caso de Teste 4:** Aplicar filtros para refinar a lista de produtos. 📦
+
+**Passos:**
+
+1. Realizar o login como vendedor. 👤
+2. Acessar a função de filtragem de produtos. 📅
+3. Aplicar filtros (por categoria, preço, etc.). 📦
+4. Verificar se os produtos exibidos correspondem aos filtros aplicados. ✅
+
+**Resultado Esperado:** Os produtos exibidos são filtrados de acordo com os critérios selecionados. ✅
+
 
 ### Testes de API 🚀
 
@@ -122,61 +179,6 @@ Este plano de teste descreve os testes a serem executados no Sistema de Vendas d
 
 **Resultado Esperado:** Erro indicando que o email já está cadastrado. ⚠️
 
-### Testes da Aplicação Principal 💻
-
-#### 1. Fluxo de Login/Logout 🔑
-
-**Caso de Teste 9:** Realizar login e logout com sucesso na aplicação. 🔓
-
-**Passos:**
-
-1. Abrir a aplicação. 💻
-2. Realizar o login com credenciais válidas. 🔑
-3. Verificar se o login foi bem-sucedido. ✅
-4. Realizar o logout. 🚪
-5. Verificar se o logout foi bem-sucedido. ✅
-
-**Resultado Esperado:** Login e logout são realizados com sucesso. ✅
-
-#### 2. Cadastro de Produto na Aplicação 📦
-
-**Caso de Teste 10:** Cadastrar um novo produto na aplicação. 📦
-
-**Passos:**
-
-1. Realizar o login como vendedor. 👤
-2. Acessar a função de cadastro de produto. 📦
-3. Preencher os detalhes do novo produto. ✍️
-4. Submeter o formulário de cadastro. 📤
-5. Verificar se o produto é cadastrado com sucesso. ✅
-
-**Resultado Esperado:** Novo produto é cadastrado com sucesso. ✅
-
-#### 3. Pesquisa de Produto 🔍
-
-**Caso de Teste 11:** Pesquisar por um produto na aplicação. 🔍
-
-**Passos:**
-
-1. Realizar o login como vendedor. 👤
-2. Acessar a função de pesquisa de produto. 🔍
-3. Inserir um termo de pesquisa válido. ✏️
-4. Verificar se os resultados da pesquisa correspondem ao termo inserido. ✅
-
-**Resultado Esperado:** A pesquisa retorna resultados válidos. ✅
-
-#### 4. Filtragem de Produtos 📅
-
-**Caso de Teste 12:** Aplicar filtros para refinar a lista de produtos. 📦
-
-**Passos:**
-
-1. Realizar o login como vendedor. 👤
-2. Acessar a função de filtragem de produtos. 📅
-3. Aplicar filtros (por categoria, preço, etc.). 📦
-4. Verificar se os produtos exibidos correspondem aos filtros aplicados. ✅
-
-**Resultado Esperado:** Os produtos exibidos são filtrados de acordo com os critérios selecionados. ✅
 
 ### Entregas Obrigatórias 📦
 
