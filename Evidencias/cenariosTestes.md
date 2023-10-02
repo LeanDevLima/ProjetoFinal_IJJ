@@ -153,3 +153,18 @@ Objetivo: Direcionar para um chat onde seja possível a comunicação com a cent
 3. Então o sistema deve direcionar para a central de atendimento
    
 Resultado: Ao tentar entrar em contato, clicando no ícone "contato" na barra superior da página, o site nos direciona para um GitHub que não corresponde à area onde obterá ajuda. O sistema deve direcionar para um chat onde seja possível a comunicação com o time responsável em auxiliar o usuário.
+
+
+# ID: ZBH-0012 - Filtragem de Produtos
+
+Funcionalidade: Filtragem de produtos de acordo com a categoria
+
+Cenário: Tentativa de visualizar cada produto com sua respectiva categoria
+
+Objetivo: Apresentar os produtos de acordo com suas categorias para aprimorar a interação do usuário com os itens cadastrados.
+
+1. Dado que o usuário está logado na plataforma.
+2. Quando o usuário clica nos ícones correspondentes às categorias "Roupas", "Calçados" e "Acessórios".
+3. Então o sistema deve exibir os produtos de acordo com a categoria solicitada.
+   
+Resultado: A parte correspondente à categoria "Roupas" está correta. No entanto, nas categorias "Calçados" e "Acessórios", os produtos cadastrados correspondentes não são exibidos.
