@@ -1,3 +1,4 @@
+#source projetols/Scripts/activate
 # ID: ZBH-0012 - Filtrar por produto
 
 from selenium.webdriver import Firefox
