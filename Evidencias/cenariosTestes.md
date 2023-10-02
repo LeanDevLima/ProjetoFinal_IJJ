@@ -168,3 +168,15 @@ Objetivo: Apresentar os produtos de acordo com suas categorias para aprimorar a 
 3. Então o sistema deve exibir os produtos de acordo com a categoria solicitada.
    
 Resultado: A parte correspondente à categoria "Roupas" está correta. No entanto, nas categorias "Calçados" e "Acessórios", os produtos cadastrados correspondentes não são exibidos.
+
+# ID: ZBH-0013 - Verificação de informação
+
+Funcionalidade: Mostrar as informações do produto cadastrado 
+Cenário: Na intenção de saber todas as informações fornecidas do produto
+
+Objetivo: Mostrar todas as informações do produto que forem postas na hora do cadastro do produto 
+
+1. Dado que o usuário está logado na plataforma.
+2. Quando o usuário busca pela informação fornecidas.
+3. Então o sistema deve exibir as informações correspondentes ao produto.
+Resultado: A informação de frete não aparece na apresentação do produto.
