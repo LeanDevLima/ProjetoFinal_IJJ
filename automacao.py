@@ -54,8 +54,6 @@ def check_item_in_category(navegador, link_xpath, item_name, category_name):
     except NoSuchElementException:
         red(f"-► Item '{item_name}' não encontrado na categoria '{category_name}'")
 
-
-
 check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[1]/li', "Todos")
 
 check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[3]/div[1]/img', "roupateste", "Todos")
