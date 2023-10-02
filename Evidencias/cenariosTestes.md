@@ -166,5 +166,5 @@ Objetivo: Apresentar os produtos de acordo com suas categorias para aprimorar a 
 1. Dado que o usuário está logado na plataforma.
 2. Quando o usuário clica nos ícones correspondentes às categorias "Roupas", "Calçados" e "Acessórios".
 3. Então o sistema deve exibir os produtos de acordo com a categoria solicitada.
-   
+
 Resultado: A parte correspondente à categoria "Roupas" está correta. No entanto, nas categorias "Calçados" e "Acessórios", os produtos cadastrados correspondentes não são exibidos.

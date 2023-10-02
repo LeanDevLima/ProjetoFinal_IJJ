@@ -9,7 +9,7 @@ from time import sleep
 navegador = Firefox()
 navegador.get("https://projetofinal.jogajuntoinstituto.org/")
 
-sleep(3)
+sleep(2)
 
 campo_email = navegador.find_element(By.NAME, "email")
 campo_email.send_keys("leanderson.devlima@gmail.com")
@@ -17,12 +17,12 @@ campo_email.send_keys("leanderson.devlima@gmail.com")
 campo_senha = navegador.find_element(By.NAME, "password")
 campo_senha.send_keys("jcjcjc@33")
 
-sleep(3)
+sleep(2)
 
 botao = navegador.find_element(By.XPATH, '//*[@id="root"]/main/form/button')
 botao.click()
 
-sleep(3)
+sleep(2)
 
 def green(message):
     print("\033[92m" + message + "\033[0m")
@@ -30,24 +30,56 @@ def green(message):
 def red(message):
     print("\033[91m" + message + "\033[0m")
 
-def click_link_and_check_success(navegador, link_xpath, item_name):
+def check_category_success(navegador, link_xpath, item_name):
     try:
         link = navegador.find_element(By.XPATH, link_xpath)
         link.click()
         sleep(3)
         if item_name in navegador.page_source:
-            green(f"Link '{item_name}' foi bem-sucedido!")
+            green(f"O acesso à categoria '{item_name}' foi bem-sucedido!\n")
         else:
-            raise NoSuchElementException("Elemento não encontrado")
+            raise NoSuchElementException()
     except NoSuchElementException:
-        red(f"Link '{item_name}' não foi bem-sucedido! (Elemento não encontrado)")
+        red(f"O acesso à categoria '{item_name}' não foi bem-sucedido! (Categoria não encontrada)\n")
+
+def check_item_in_category(navegador, link_xpath, item_name, category_name):
+    try:
+        link = navegador.find_element(By.XPATH, link_xpath)
+        link.click()
+        sleep(3)
+        if item_name in navegador.page_source:
+            green(f"Item '{item_name}' encontrado na categoria '{category_name}'")
+        else:
+            red(f"Item '{item_name}' não encontrado na categoria '{category_name}'")
+    except NoSuchElementException:
+        red(f"Item '{item_name}' não encontrado na categoria '{category_name}'")
 
 
-click_link_and_check_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[2]/li', "Roupas")
-click_link_and_check_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[3]/li', "Calçados")
-click_link_and_check_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[4]/li', "Acessórios")
 
-click_link_and_check_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[5]/li', "Elemento Inexistente")
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[1]/li', "Todos")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[3]/div[1]/img', "roupateste", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[4]/div[1]/img', "Cal", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[5]/div[1]/img', "Oculos SP", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[6]/div[1]/img', "Miçanga BA", "Todos")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[2]/li', "Roupas")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "roupateste", "Roupas")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[3]/li', "Calçados")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "Cal", "Calçados")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[4]/li', "Acessórios")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "Oculos SP", "Acessórios")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[2]/img', "Miçanga BA", "Acessórios")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[5]/li', "Elemento Inexistente")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[7]/div[1]/img', "Acesorio3(nao existe)", "Todos")
 
 sleep(3)
 
