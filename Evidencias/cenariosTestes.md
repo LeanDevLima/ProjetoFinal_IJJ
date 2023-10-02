@@ -12,7 +12,7 @@ Objetivo: o objetivo é que seja possível o cadastro
 
 Resultado: Ao clicar em "ou cadastre-se com" através da alternativa que a plataforma fornece, de cadastrar com o Google ou com o Facebook, porém, não se obtém resultado	Deveria ser possível cadastrar-se com essas duas alternativas.
 
-Evidência:
+
 
 # ID: ZBH-0002 - Texto 
 

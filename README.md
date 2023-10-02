@@ -6,206 +6,186 @@ Este plano de teste descreve os testes a serem executados no Sistema de Vendas d
 
 **Data de Execução:** 01/10/2023 📅
 
-### Testes da Aplicação Principal 💻
+# ID: ZBH-0001 - Login 
 
-#### 1. Fluxo de Login/Logout 🔑
+Funcionalidade: Login com cadastro por Google ou Facebook
 
-**Caso de Teste 1:** Realizar login e logout com sucesso na aplicação. 🔓
+Cenário: Tentativa de cadastro
 
-**Passos:**
+Objetivo: o objetivo é que seja possível o cadastro
 
-1. Abrir a aplicação. 💻
-2. Realizar o login com credenciais válidas. 🔑
-3. Verificar se o login foi bem-sucedido. ✅
-4. Realizar o logout. 🚪
-5. Verificar se o logout foi bem-sucedido. ✅
+1. Dado que o usuário está na tela de cadastro
+2. Quando o usuário clica em "ou cadastre-se com" e escolhe a opção de cadastro com Google ou Facebook
+3. Então o sistema deve apresentar resultados
 
-**Resultado Esperado:** Login e logout são realizados com sucesso. ✅
+Resultado: Ao clicar em "ou cadastre-se com" através da alternativa que a plataforma fornece, de cadastrar com o Google ou com o Facebook, porém, não se obtém resultado	Deveria ser possível cadastrar-se com essas duas alternativas.
 
-#### 2. Cadastro de Produto na Aplicação 📦
 
-**Caso de Teste 2:** Cadastrar um novo produto na aplicação. 📦
 
-**Passos:**
+# ID: ZBH-0002 - Texto 
 
-1. Realizar o login como vendedor. 👤
-2. Acessar a função de cadastro de produto. 📦
-3. Preencher os detalhes do novo produto. ✍️
-4. Submeter o formulário de cadastro. 📤
-5. Verificar se o produto é cadastrado com sucesso. ✅
+Funcionalidade: Experiência visual do usuário
 
-**Resultado Esperado:** Novo produto é cadastrado com sucesso. ✅
+Cenário: Layout do site
 
-#### 3. Pesquisa de Produto 🔍
+Objetivo: Garantir que haja apenas um texto de registro visível.
 
-**Caso de Teste 3:** Pesquisar por um produto na aplicação. 🔍
+1. Dado que o usuário está na página de registro
+2. Quando o usuário visualiza o texto de registro
+3. Então deve haver apenas um texto de registro visível
 
-**Passos:**
+Resultado: Ao entrar no site é possível reparar um erro, onde visualizamos que há duas formas de novo cadastramento. Deve haver apenas apenas um texto de registro.
 
-1. Realizar o login como vendedor. 👤
-2. Acessar a função de pesquisa de produto. 🔍
-3. Inserir um termo de pesquisa válido. ✏️
-4. Verificar se os resultados da pesquisa correspondem ao termo inserido. ✅
+# ID: ZBH-0003 - Login incorreto
 
-**Resultado Esperado:** A pesquisa retorna resultados válidos. ✅
+Funcionalidade: Tratamento de tentativa de login com erro
 
-#### 4. Filtragem de Produtos 📅
+Cenário: Tentativa de login com erro de e-mail
 
-**Caso de Teste 4:** Aplicar filtros para refinar a lista de produtos. 📦
+Objetivo: Permitir o login mesmo que não haja cadastro com o e-mail.
 
-**Passos:**
+1. Dado que o usuário está na tela de login
+2. Quando o usuário tenta efetuar o login com um e-mail que não existe na plataforma
+3. Então o sistema deve informar que o e-mail não está cadastrado
 
-1. Realizar o login como vendedor. 👤
-2. Acessar a função de filtragem de produtos. 📅
-3. Aplicar filtros (por categoria, preço, etc.). 📦
-4. Verificar se os produtos exibidos correspondem aos filtros aplicados. ✅
+Resultado: Ao tentar criar o login, entrando na alternativa de registro, o site informa que já existe usuário com o email apresentado. O site não deve permitir o login sem que haja cadastro com o e-mail.
 
-**Resultado Esperado:** Os produtos exibidos são filtrados de acordo com os critérios selecionados. ✅
+# ID: ZBH-0004 - Permissão de acesso
 
+Funcionalidade: Restrição de acesso à plataforma
 
-### Testes de API 🚀
+Cenário: Acesso após várias tentativas de login
 
-#### 1. Verificação da Disponibilidade da API ✅
+Objetivo: Permitir o acesso somente após um cadastro bem-sucedido.
 
-**Método:** GET
+1. Dado que o usuário está na tela de login
+2. Quando o usuário tenta fazer o login várias vezes com credenciais incorretas
+3. Então o sistema não deve permitir o acesso à plataforma
 
-**Endpoint:** /hearts
+Resultado: Ao apresentar o mesmo login várias vezes, consegue-se abrir a plataforma. O sistema só deve permitir o acesso somente após um cadastro bem-sucedido.
 
-**Caso de Teste 1:** Verificar se a API está online 🌎
+# ID: ZBH-0005 - Preço
 
-**Passos:**
+Funcionalidade: Exibição de preço de produto
 
-1. Realizar uma solicitação GET para /hearts.
-2. Verificar se a resposta retorna um código 200 (A API está funcionando corretamente).
+Cenário: Exibição de preço ao clicar em "Preço"
 
-**Resultado Esperado:** A API está online. ✅
+Objetivo: Mostrar o preço do produto cadastrado.
 
-#### 2. Listagem de Produtos 🛒
+1. Dado que o usuário está logado na plataforma
+2. Quando o usuário rola a página para baixo e clica em "Preço"
+3. Então o sistema deve exibir apenas o preço do produto cadastrado
 
-**Método:** GET
+Resultado: Ao entrar na plataforma, rola a página para baixo e clica em "Preço". Deveria aparecer somente o preço do produto cadastrado, mas estão aparecendo vários outros preços.
 
-**Endpoint:** /
+# ID: ZBH-0006 - Imagem no cadastro do Produto
 
-**Caso de Teste 2:** Verificar a listagem de produtos 📃
+Funcionalidade: Exibição da imagem de produto cadastrado
 
-**Passos:**
+Cenário: Exibição da imagem ao cadastrar o produto
 
-1. Realizar uma solicitação GET para /.
-2. Verificar se a resposta retorna um código 200 (Lista de produtos retornada com sucesso).
-3. Verificar se a resposta contém uma lista de produtos válida.
+Objetivo: Garantir que a imagem seja a do produto cadastrado.
 
-**Resultado Esperado:** Lista de produtos é retornada com sucesso. ✅
+1. Dado que o usuário está cadastrando um produto
+2. Quando o usuário confere se a imagem está correta 
+3. Então o sistema deve permitir a conclusão do cadastro do produto
 
-#### 3. Cadastro de Produto ➕
+Resultado: Ao cadastrar o produto a imagem se sobrepôe às informações. A imagem deve permanecer no mesmo lugar e o site deve permitir que o usuário conclua o cadastro do produto.
 
-**Método:** POST
+# ID: ZBH-0007 - Campo de Pesquisa
 
-**Endpoint:** /
+Funcionalidade: Pesquisa de produtos
 
-**Caso de Teste 3:** Cadastrar um novo produto com sucesso 📦
+Cenário: Utilizar o campo de pesquisa para buscar um produto
 
-**Passos:**
+Objetivo: Garantir que o produto pesquisado seja exibido em uma página específica
 
-1. Autenticar-se como vendedor (usar o caso de teste de login ou registro).
-2. Realizar uma solicitação POST para / com os dados do novo produto.
-3. Verificar se a resposta retorna um código 200 (Produto cadastrado com sucesso).
+1. Dado que o usuário está na plataforma
+2. Quando o usuário clica no ícone de pesquisa e digita o nome do produto
+3. Então o sistema deve gerar o resultado correspondente ao produto pesquisado
 
-**Resultado Esperado:** Produto é cadastrado com sucesso. ✅
+Resultado: Ao clicar no ícone de pesquisa e digitar o nome do produto, não gera nenhum resultado. Deveria aparecer o produto pesquisado em uma página específica.
 
-**Método:** POST
+# ID: ZBH-0008 - Leitura do Site
 
-**Endpoint:** /register
+Funcionalidade: Exibição do site de forma correta
 
-**Caso de Teste 4:** Tentativa de cadastro de produto sem autenticação 🚫
+Cenário: Exibição de palavras e textos de modo a facilitar a interação do usuário
 
-**Passos:**
+Objetivo: Mostrar todas as palavras e textos corretamente
 
-1. Realizar uma solicitação POST para / sem autenticação.
-2. Verificar se a resposta retorna um código 400 (Usuário não encontrado).
+1. Dado que o usuário está acessando o site através de um celular
+2. Quando o usuário entra com o login
+3. Então o sistema deve exibir todas as palavras corretamente
 
-**Resultado Esperado:** Erro indicando que o usuário não está autenticado. 🚫
+Resultado: Com o celular iPhone, que tem o sistema iOS, ao entrar com o login é possível identificar diversas palavras incompletas na plataforma. O site deve mostrar todas as palavras corretamente no sistema operacional iOS.
 
-#### 4. Autenticação e Registro de Usuário 👤
+# ID: ZBH-0009 - Informações de perfil
 
-**Método:** POST
+Funcionalidade: Exibição de informações que estão no perfil do usuário
 
-**Endpoint:** /login
+Cenário: Clicar no ícone "perfil" do site
 
-**Caso de Teste 5:** Login bem-sucedido 🔑
+Objetivo: Permitir o acesso e a possível edição das informações de perfil
 
-**Passos:**
+1. Dado que o usuário está cadastrado 
+2. Quando o usuário entra com o login e clica no ícone "perfil" na barra superior da página
+3. Então o sistema deve exibir as informações de perfil e possibilitar editá-las
+   
+Resultado: Com o celular iPhone, que tem o sistema iOS, ao fazer o login e clicar no ícone "perfil" que aparece na barra superior da página deveria aparecer as informações do perfil, para possibilitar o acesso e a alteração das informações, porém tais informações não aparecem.
 
-1. Realizar uma solicitação POST para /login com credenciais válidas.
-2. Verificar se a resposta retorna um código 200 (Login bem-sucedido).
+# ID: ZBH-0010 - Registro de produto
 
-**Resultado Esperado:** Login é bem-sucedido. ✅
+Funcionalidade: Registro de um novo produto
 
-**Método:** POST
+Cenário: Usuário cadastrando um produto novo
 
-**Endpoint:** /login
+Objetivo: Permitir o registro do produto com sucesso
 
-**Caso de Teste 6: **Tentativa de login com credenciais inválidas ❌
+1. Dado que o usuário está cadastrando o produto usando um celular 
+2. Quando o usuário entra com o login e clica no ícone "Adicionar" e coloca as informações
+3. Então o sistema deve permitir o registro do produto na plataforma
 
-**Passos:**
+Resultado: Com o celular com sistema operacional iOS, ao entrar com o login e clicar no ícone "Adicionar" e inserir as informações. Deveria ser possível registrar o produto na plataforma com sucesso. Porém o site não segue com o cadastro.
 
-1. Realizar uma solicitação POST para /login com credenciais inválidas.
-2. Verificar se a resposta retorna um código 401 (Credenciais inválidas).
+# ID: ZBH-0011 - Contato
 
-**Resultado Esperado:** Erro indicando que as credenciais são inválidas. ❌
+Funcionalidade: Botão de contato com suporte
 
-**Método:** POST
+Cenário: Tentativa de contato com suporte
 
-**Endpoint:** /register
+Objetivo: Direcionar para um chat onde seja possível a comunicação com a central de atendimento ou suporte técnico
 
-**Caso de Teste 7:** Registro de novo usuário com sucesso 👤
+1. Dado que o usuário está logado na plataforma
+2. Quando o usuário clica no ícone "contato" na barra superior da página
+3. Então o sistema deve direcionar para a central de atendimento
+   
+Resultado: Ao tentar entrar em contato, clicando no ícone "contato" na barra superior da página, o site nos direciona para um GitHub que não corresponde à area onde obterá ajuda. O sistema deve direcionar para um chat onde seja possível a comunicação com o time responsável em auxiliar o usuário.
 
-**Passos:**
 
-1. Realizar uma solicitação POST para /register com dados de novo usuário.
-2. Verificar se a resposta retorna um código 200 (Usuário cadastrado com sucesso).
+# ID: ZBH-0012 - Filtragem de Produtos
 
-**Resultado Esperado:** Novo usuário é registrado com sucesso. ✅
+Funcionalidade: Filtragem de produtos de acordo com a categoria
 
-**Método:** POST
+Cenário: Tentativa de visualizar cada produto com sua respectiva categoria
 
-**Endpoint:** /register
+Objetivo: Apresentar os produtos de acordo com suas categorias para aprimorar a interação do usuário com os itens cadastrados.
 
-**Caso de Teste 8:** Tentativa de registro com um email já cadastrado ⚠️
+1. Dado que o usuário está logado na plataforma.
+2. Quando o usuário clica nos ícones correspondentes às categorias "Roupas", "Calçados" e "Acessórios".
+3. Então o sistema deve exibir os produtos de acordo com a categoria solicitada.
 
-**Passos:**
+Resultado: A parte correspondente à categoria "Roupas" está correta. No entanto, nas categorias "Calçados" e "Acessórios", os produtos cadastrados correspondentes não são exibidos.
 
-1. Realizar uma solicitação POST para /register com um email que já está cadastrado.
-2. Verificar se a resposta retorna um código 409 (Email já cadastrado).
+# ID: ZBH-0013 - Verificação de informação
 
-**Resultado Esperado:** Erro indicando que o email já está cadastrado. ⚠️
+Funcionalidade: Mostrar as informações do produto cadastrado 
+Cenário: Na intenção de saber todas as informações fornecidas do produto
 
+Objetivo: Mostrar todas as informações do produto que forem postas na hora do cadastro do produto 
 
-### Entregas Obrigatórias 📦
-
-- Plano de teste com cenários em Gherkin/BDD
-- Bug report com evidência de testes no Bitrix
-- Testes das funcionalidades: Fluxo de Login/Logout, Cadastro de Produto, Pesquisa de Produto, Filtragem de Produtos
-- Fluxo de navegação na loja
-- Testes automatizados (pelo menos um cenário testado de modo automatizado)
-- Testes de API (Criar conta e cadastrar um produto através da API via Postman, além de realizar testes básicos, como checar status e verificar elementos)
-- Bug report: Reportar individualmente cada bug e criar um relatório contendo a quantidade de bugs classificados por criticidade
-
-### Observações 📅
-
-- Testes de performance, como carga e estresse, não devem ser realizados.
-- O sistema pode ficar lento conforme uploads forem feitos, isso não deve ser catalogado como um bug.
-
-### Apresentação 📦
-
-- Cada Squad terá entre 15 e 20 minutos de apresentação.
-- Um teste de API e um teste automatizado deverão ser realizados ao vivo, com a opção de gravar um vídeo dos testes funcionando em caso de falha.
-- Todos os membros do squad devem participar ativamente da apresentação com a câmera ligada.
-- O plano de teste, bug report, repositório e Collection do Postman em JSON devem ser submetidos até 1 hora antes da apresentação.
-- Selecionar os bugs mais importantes de cada categoria para apresentação, com no mínimo 1 bug por criticidade.
-
-### Critérios de Avaliação 📅
-
-- Conformidade com o que foi demandado (testes obrigatórios e entregas dentro do prazo)
-- Aplicação do conhecimento adquirido no curso
-- Participação de todo o squad na apresentação final
-- Bom comportamento, dicção e clareza das ideias.
+1. Dado que o usuário está logado na plataforma.
+2. Quando o usuário busca pela informação fornecidas.
+3. Então o sistema deve exibir as informações correspondentes ao produto.
+   
+Resultado: A informação de frete não aparece na apresentação do produto.
