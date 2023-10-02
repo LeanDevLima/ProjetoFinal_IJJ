@@ -34,13 +34,13 @@ def check_category_success(navegador, link_xpath, item_name):
     try:
         link = navegador.find_element(By.XPATH, link_xpath)
         link.click()
-        sleep(3)
+        sleep(2)
         if item_name in navegador.page_source:
-            green(f"O acesso à categoria '{item_name}' foi bem-sucedido!\n")
+            green(f"\nO acesso à categoria '{item_name}' foi bem-sucedido!")
         else:
             raise NoSuchElementException()
     except NoSuchElementException:
-        red(f"O acesso à categoria '{item_name}' não foi bem-sucedido! (Categoria não encontrada)\n")
+        red(f"\nO acesso à categoria '{item_name}' não foi bem-sucedido! (Categoria não encontrada)")
 
 def check_item_in_category(navegador, link_xpath, item_name, category_name):
     try:
@@ -48,11 +48,11 @@ def check_item_in_category(navegador, link_xpath, item_name, category_name):
         link.click()
         sleep(3)
         if item_name in navegador.page_source:
-            green(f"Item '{item_name}' encontrado na categoria '{category_name}'")
+            green(f"-► Item '{item_name}' encontrado na categoria '{category_name}'")
         else:
-            red(f"Item '{item_name}' não encontrado na categoria '{category_name}'")
+            raise NoSuchElementException()
     except NoSuchElementException:
-        red(f"Item '{item_name}' não encontrado na categoria '{category_name}'")
+        red(f"-► Item '{item_name}' não encontrado na categoria '{category_name}'")
 
 
 
@@ -81,6 +81,5 @@ check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2
 
 check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[7]/div[1]/img', "Acesorio3(nao existe)", "Todos")
 
-sleep(3)
-
+sleep(2)
 navegador.quit()
