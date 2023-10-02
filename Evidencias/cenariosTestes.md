@@ -179,4 +179,5 @@ Objetivo: Mostrar todas as informações do produto que forem postas na hora do 
 1. Dado que o usuário está logado na plataforma.
 2. Quando o usuário busca pela informação fornecidas.
 3. Então o sistema deve exibir as informações correspondentes ao produto.
+   
 Resultado: A informação de frete não aparece na apresentação do produto.
