@@ -200,7 +200,7 @@ Resultado: A informação de frete não aparece na apresentação do produto.
 </details>
 
 <details>
-<summary> Report Bugs | Criticidade | Evidências 🌟</summary>
+<summary> Report Bugs | Criticidade | Evidências | Bitrix 🌟</summary>
 <p>
 
 Este é o arquivo no qual registramos os bugs, incluindo a classificação de sua criticidade.
@@ -224,6 +224,10 @@ Para melhor visualização, abaixo estão as evidências de forma mais detalhada
 <img src="Evidencias\Evidências dos bugs_page-0011.jpg">
 <img src="Evidencias\Evidências dos bugs_page-0012.jpg">
 <img src="Evidencias\Evidências dos bugs_page-0013.jpg">
+
+Como solicitado no case do projeto final, utilizamos a ferramenta Bitrix e a metodolodia Kanban para execução dos testes funcionais, cada caso de teste era um card e todos foram concluídos com sucesso:
+
+<img src="Evidencias\bitrix.png">
 
 </details>
 
