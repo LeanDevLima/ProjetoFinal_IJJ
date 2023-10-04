@@ -5,7 +5,7 @@ Esse [repositório](https://github.com/LeanDevLima/ProjetoFinal_IJJ) é dedicado
 Clique nas "►" abaixo para visualizar os conteúdos trabalhados no projeto. Para recolher o conteúdo, basta clicar nas "▼" novamente. 😁
 
 
-**Integrantes da Squad 02:** [Leanderson Lima](https://www.linkedin.com/in/leanderson-dias-de-lima/) 👨🏾‍💻 | [Sara Sara J. M da Cruz](https://www.linkedin.com/in/sara-j-m-da-cruz-08ba19282/) 👩🏾‍💻
+**Integrantes da Squad 02:** [Leanderson Lima](https://www.linkedin.com/in/leanderson-dias-de-lima/) 👨🏾‍💻 | [Sara J. M da Cruz](https://www.linkedin.com/in/sara-j-m-da-cruz-08ba19282/) 👩🏾‍💻
 
 **Data de Execução dos testes:** 01/10/2023 📅
 
@@ -203,11 +203,27 @@ Resultado: A informação de frete não aparece na apresentação do produto.
 <summary> Report Bugs | Criticidade | Evidências 🌟</summary>
 <p>
 
-Esse é o arquivo onde inserimos os bugs incluindo seu nível de criticidade.
+Este é o arquivo no qual registramos os bugs, incluindo a classificação de sua criticidade.
 
-O arquivo correspondente está nesse mesmo repositório na pasta \Evidencias.
+O arquivo correspondente pode ser encontrado nesse mesmo repositório, na pasta 'Evidencias'."
 
 <img src="Evidencias\Report Bugs - Projeto Final_page-0001.jpg">
+
+Para melhor visualização, abaixo estão as evidências de forma mais detalhada:
+
+<img src="Evidencias\Evidências dos bugs_page-0001.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0002.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0003.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0004.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0005.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0006.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0007.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0008.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0009.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0010.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0011.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0012.jpg">
+<img src="Evidencias\Evidências dos bugs_page-0013.jpg">
 
 </details>
 
@@ -215,25 +231,14 @@ O arquivo correspondente está nesse mesmo repositório na pasta \Evidencias.
 <summary> Testes automatizados 🌟</summary>
 <p>
 
-A parte correspondente a automação de testes nossa squad decidiou dividir em três etapas de acordo com o que foi aprendido durante todo o curso, ressalto que o caso de teste escolhido para os dois primeiros casos abaixo foi o de número 12.
+A automação de testes, realizada pela nossa squad, foi dividida em três etapas, seguindo o conhecimento adquirido ao longo do curso. É importante destacar que o caso de teste selecionado para as duas primeiras etapas foi o de número 12 e a última etapa foi o de número 1.
 
-## ID: ZBH-0012 - Filtragem de Produtos
-
-**Funcionalidade:** Filtragem de produtos de acordo com a categoria
-
-**Cenário:** Tentativa de visualizar cada produto com sua respectiva categoria
-
-**Objetivo:** Apresentar os produtos de acordo com suas categorias para aprimorar a interação do usuário com os itens cadastrados.
-
-1. ***Dado que*** o usuário está logado na plataforma.
-2. ***Quando*** o usuário clica nos ícones correspondentes às categorias "Todos", "Roupas", "Calçados" e "Acessórios".
-3. ***Então*** o sistema deve exibir os produtos de acordo com a categoria solicitada.
-
-Resultado: A parte correspondente à categoria "Roupas" está correta. No entanto, nas categorias "Calçados" e "Acessórios", os produtos cadastrados correspondentes não são exibidos.
+### ID: ZBH-0012 - Filtragem de Produtos | ID: ZBH-0001 - Login
 
 
 <details>
 <summary> Testes automatizados I | Programação Estruturada 🌟</summary>
+<p>
 
 Nessa abordagem fizemos uma automação com um estilo de programação estruturada:
 
@@ -335,6 +340,7 @@ Detalhes desse código e seus resultados estão na próxima etapa dos testes aut
 
 <details>
 <summary> Testes automatizados II | Programação Orientada a Objetos 🌟</summary>
+<p>
 
 Nessa abordagem usamos um estilo de programação Orientado a Objetos onde cada fução foi dividida em arquivos diferentes:
 
@@ -381,7 +387,7 @@ def check_category_success(navegador, link_xpath, item_name):
 
 ```
 
-Essa função tem o propósito de encontrar a categoria e informar no console em caso de sucesso. O laço de repetição escolhido foi o ***'try'*** ***'except'*** pois em caso de falha ao encontrar a categoria o código iria exibir um erro de ***'NoSuchElementException'***, o que iria interromper a execução do mesmo. Porém o ***'raise'*** que está dentro de ***'else'*** obriga o código a executar o comando que está em ***'except'***. Exibindo no terminal a informação referente a uma operação malsucedida. O arquivo que se refere a essa função está em Automacao\check_category.py.
+Essa função tem o propósito de encontrar a categoria e informar no terminal em caso de sucesso. O laço de repetição escolhido foi o ***'try'*** ***'except'*** pois em caso de falha ao encontrar a categoria o código iria exibir um erro de ***'NoSuchElementException'***, o que interromperia a execução do mesmo. Porém o ***'raise'*** que está dentro de ***'else'*** obriga o código a executar o comando que está em ***'except'***. Exibindo no terminal a informação referente a uma operação malsucedida. O arquivo que se refere a essa função está em Automacao\check_category.py.
 
 
 ```python
@@ -405,7 +411,6 @@ def check_item_in_category(navegador, link_xpath, item_name, category_name):
 ```
 
 A mesma lógica da função ***'check_category_success'*** foi usada para a função ***'check_item_in_category'***. O arquivo correspondente está em Automacao\check_item.py.
-
 
 ```python
 ## ID: ZBH-0012 - Filtrar por produto
@@ -464,7 +469,7 @@ sleep(3)
 navegador.quit()
 
 ```
-Por fim temos o arquivo Automacao\main.py onde ele importa todas essas funções e passas os argumentos solicitados por elas para que possam ser executadas.
+Por fim temos o arquivo Automacao\main.py onde ele importa todas essas funções e passa os argumentos solicitados por elas para que possam ser executadas.
 
 Resultado no terminal:
 
@@ -475,16 +480,17 @@ Resultado no terminal:
 
 <details>
 <summary> Testes automatizados III | Biblioteca Behave 🌟</summary>
-
-## ID: ZBH-0001 - Login 
+<p>
 
 Automação utilizando a biblioteca [Behave](https://behave.readthedocs.io/en/latest/).
 
 Para realização dessa parte da atividade nossa squad usou o cenário de testes ZBH-0001 - Login.
 
-Estrutura:
+Estrutura padrão:
 
 <img src="Evidencias\estrutura.png">
+
+No arquivo automacao.feature estão as etapas do teste que será realizado.
 
 ```feature
 Feature: Acessar categorias de produtos
@@ -497,7 +503,7 @@ Feature: Acessar categorias de produtos
     Then o sistema permite o login e fecha o navegador
 ```
 
-No código:
+No arquivo steps.py:
 
 ```python
 from behave import given, when, then
@@ -539,7 +545,7 @@ def login_success(context):
 ```
 O propósito desse último teste, conforme foi explicado e demonstrado durante a apresentação, foi executar um login com sucesso e fechar o navegador em seguida.
 
-A execução dessa parte do trabalho mostrou que temos que criar mais intimidade com essa estrutura de execução de testes e com a biblioteca behave, porém com esforço, dedicação e trabalho em equipe, conseguimos finalizar a parte de automação com sucesso.
+A execução dessa parte do trabalho mostrou que nossa squad deve procurar criar mais intimidade com essa estrutura de execução de testes e com a biblioteca behave, porém com esforço, dedicação e trabalho em equipe, conseguimos finalizar a parte de automação com sucesso.
 
 </details>
 </details>
@@ -548,11 +554,11 @@ A execução dessa parte do trabalho mostrou que temos que criar mais intimidade
 <summary> Testes de API 🌟</summary>
 <p>
 
-Estrutura da API foi montada manualmente de acordo com o swagger, pois não foi possível importar a mesma.
+A estrutura da API foi construída manualmente com base no Swagger, uma vez que não foi viável importá-la automaticamente no Postman.
 
 <img src="Evidencias\estruturaAPI.png">
 
-Foi definida uma variável para que não precisasse inserir a mesma URL em cada requisição.
+De início foi definida uma variável para que não precisassemos inserir a mesma URL em cada requisição.
 
 <img src="Evidencias\variavelAPI.png">
 
@@ -565,9 +571,7 @@ Em seguida o POST faz o registro de um usuário.
 
 <img src="Evidencias\usuarioAPI.png">
 
-O próximo POST faz o login desse mesmo usuário gerando um token. O que nos leva para o próximo GET onde o token dinamico
-
-
+O próximo POST faz o login desse mesmo usuário gerando um token. O que nos leva para o próximo GET onde o token, que era dinâmico, nos obrigava a fazer o login constantemente para pegar um novo token. Para encurtar esse processo, configuramos no Pre-request o seguinte Script:
 
 ```javascript
 pm.sendRequest({
@@ -581,11 +585,54 @@ pm.sendRequest({
         mode: 'raw',
         raw: JSON.stringify({
             "email": "leanderson.devlima@gmail.com",
-            "password": "jcjcjc@33"
+            "password": "xxxx@senha"
         })
     }
 }, function (err, res) {
     pm.environment.set('tokenJogaJunto', res.json().token);
 });
 ```
+Nesse pré-requisito (pre-request) está ocorrendo o seguinte:
 
+1. Uma solicitação POST está sendo enviada para a URL 'http://apipf.jogajuntoinstituto.org/login'. 
+
+2. A solicitação inclui um cabeçalho (header) que indica que o cliente aceita uma resposta no formato JSON e informa que o conteúdo enviado é no formato JSON.
+
+3. O corpo da solicitação (body) contém um objeto JSON que representa as informações de login, com um endereço de e-mail e senha.
+
+4. A resposta à solicitação será processada em uma função que verifica se ocorreu algum erro e, se não houver erros, extrai o token de autenticação da resposta JSON e o armazena no ambiente de trabalho do Postman com a chave 'tokenJogaJunto'. Isso é feito para que o token de autenticação possa ser usado em solicitações subsequentes.
+
+Resumidamente, esse script está fazendo a solicitação de login, enviando as credenciais de login e armazenando o token de autenticação na variável 'tokenJogaJunto'. Seguindo adiante dando o comando GET.
+
+<img src="Evidencias\tokenAPI.png">
+
+
+Na sequencia o POST nos permite cadastrar um produto para um usuário que já está logado.
+
+<img src="Evidencias\cadastro_produtoAPI.png">
+
+Ao cadastrar um produto obtemos seu ID, o que nos permite usar método DELETE:
+
+<img src="Evidencias\deleteAPI.png">
+
+Cada etapa do funcionamento da API foi demonstrada com sucesso durante a apresentação.
+
+</details>
+
+<details>
+<summary> Considerações Finais e Agradecimentos 🌟</summary>
+<p>
+
+Queremos expressar nossa sincera gratidão ao [**Instituto JogaJunto**](https://www.jogajuntoinstituto.org/) pela oportunidade incrível de participar do curso de QA e do emocionante projeto Trip. Este curso e projeto moldaram significativamente nossa jornada de aprendizado, e estamos imensamente agradecidos por isso.
+
+Durante todo o processo, o trabalho em equipe e a colaboratividade foram os pilares do nosso sucesso. Cada desafio e obstáculo que enfrentamos foi superado graças à dedicação e parceria entre todos os membros da squad. A Sara e eu trabalhamos incansavelmente para entregar um projeto que refletisse o nosso compromisso com a qualidade e a excelência.
+
+Infelizmente, tivemos algumas desistências ao longo do caminho, o que nos sobrecarregou, mas decidimos enfrentar esses desafios com determinação. Isso nos ensinou a importância da resiliência e do trabalho em equipe.
+
+Por fim, agradecemos profundamente ao [**Instituto JogaJunto**](https://www.jogajuntoinstituto.org/) por compartilhar seu conhecimento, orientação e apoio. Este curso não apenas nos forneceu as habilidades técnicas necessárias, mas também nos inspirou a crescer como profissionais e como indivíduos.
+
+Foi uma honra ter feito parte do projeto Trip e ser chamado de ***"tripper"***. Esperamos que este projeto seja apenas o começo de uma jornada incrível em qualidade de software. Obrigado por acreditar em nós e nos capacitar a alcançar nosso potencial.
+
+Com gratidão,
+
+[Leanderson Lima](https://www.linkedin.com/in/leanderson-dias-de-lima/) 👨🏾‍💻 | [Sara J. M da Cruz](https://www.linkedin.com/in/sara-j-m-da-cruz-08ba19282/) 👩🏾‍💻
