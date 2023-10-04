@@ -1,4 +1,4 @@
-## Plano de Teste - Projeto Final - Bugou? QA tá ON! 📅 📦
+## Projeto Final - Bugou? QA tá ON! 📅 📦
 
 Esse [repositório](https://github.com/LeanDevLima/ProjetoFinal_IJJ) é dedicado ao Projeto Final do curso de Quality Assurance oferecido pelo [**Instituto JogaJunto**](https://www.jogajuntoinstituto.org/). 
 
