@@ -1,10 +1,14 @@
 ## Plano de Teste - Projeto Final - Bugou? QA tá ON! 📅 📦
 
-Este plano de teste descreve os testes a serem executados no Sistema de Vendas do Instituto Joga Junto, com foco na perspectiva do vendedor. O sistema é composto por uma aplicação frontend construída com React JS, hospedada na AWS Amplify, e utiliza uma estrutura de backend em NodeJS com um banco de dados MySQL versão 8.
+Este plano de teste descreve os testes a serem executados no Sistema de Vendas do Instituto Joga Junto, com foco na perspectiva do usuário. O sistema é composto por uma aplicação frontend construída com React JS, hospedada na AWS Amplify, e utiliza uma estrutura de backend em NodeJS com um banco de dados MySQL versão 8.
 
 **Equipe de QA:** [Leanderson Lima](https://www.linkedin.com/in/leanderson-dias-de-lima/) 👨🏾‍💻 | [Sara Sara J. M da Cruz](https://www.linkedin.com/in/sara-j-m-da-cruz-08ba19282/) 👩🏾‍💻
 
 **Data de Execução:** 01/10/2023 📅
+
+
+<details>
+<summary> Cenários de Teste | Gherkin 🌟</summary>
 
 # ID: ZBH-0001 - Login 
 
@@ -189,3 +193,224 @@ Objetivo: Mostrar todas as informações do produto que forem postas na hora do 
 3. Então o sistema deve exibir as informações correspondentes ao produto.
    
 Resultado: A informação de frete não aparece na apresentação do produto.
+
+</details>
+
+<details>
+<summary> Report Bugs | Criticidade | Evidências 🌟</summary>
+
+<img src="Evidencias\Report Bugs - Projeto Final_page-0001.jpg">
+
+</details>
+
+<details>
+<summary> Testes automatizados 🌟</summary>
+
+Automação com um estilo de programação estruturada:
+
+```python
+# ID: ZBH-0012 - Filtrar por produto
+
+import sys
+from selenium.webdriver import Firefox
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
+from time import sleep
+
+sys.path.append("projetols")
+
+navegador = Firefox()
+navegador.get("https://projetofinal.jogajuntoinstituto.org/")
+
+sleep(2)
+
+campo_email = navegador.find_element(By.NAME, "email")
+campo_email.send_keys("leanderson.devlima@gmail.com")
+
+campo_senha = navegador.find_element(By.NAME, "password")
+campo_senha.send_keys("jcjcjc@33")
+
+sleep(2)
+
+botao = navegador.find_element(By.XPATH, '//*[@id="root"]/main/form/button')
+botao.click()
+
+sleep(2)
+
+def green(message):
+    print("\033[92m" + message + "\033[0m")
+
+def red(message):
+    print("\033[91m" + message + "\033[0m")
+
+def check_category_success(navegador, link_xpath, item_name):
+    try:
+        link = navegador.find_element(By.XPATH, link_xpath)
+        link.click()
+        sleep(2)
+        if item_name in navegador.page_source:
+            green(f"\nO acesso à categoria '{item_name}' foi bem-sucedido!")
+        else:
+            raise NoSuchElementException()
+    except NoSuchElementException:
+        red(f"\nO acesso à categoria '{item_name}' não foi bem-sucedido! (Categoria não encontrada)")
+
+def check_item_in_category(navegador, link_xpath, item_name, category_name):
+    try:
+        link = navegador.find_element(By.XPATH, link_xpath)
+        link.click()
+        sleep(3)
+        if item_name in navegador.page_source:
+            green(f"-► Item '{item_name}' encontrado na categoria '{category_name}'")
+        else:
+            raise NoSuchElementException()
+    except NoSuchElementException:
+        red(f"-► Item '{item_name}' não encontrado na categoria '{category_name}'")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[1]/li', "Todos")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[3]/div[1]/img', "roupateste", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[4]/div[1]/img', "Cal", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[5]/div[1]/img', "Oculos SP", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[6]/div[1]/img', "Miçanga BA", "Todos")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[2]/li', "Roupas")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "roupateste", "Roupas")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[3]/li', "Calçados")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "Cal", "Calçados")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[4]/li', "Acessórios")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "Oculos SP", "Acessórios")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[2]/img', "Miçanga BA", "Acessórios")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[5]/li', "Elemento Inexistente")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[7]/div[1]/img', "Acesorio3(nao existe)", "Todos")
+
+sleep(2)
+navegador.quit()
+
+```
+
+Automação com um estilo de programação Orientado a Objetos:
+
+```python
+def green(message):
+    print("\033[92m" + message + "\033[0m")
+
+def red(message):
+    print("\033[91m" + message + "\033[0m")
+```
+
+```python
+from selenium.webdriver.common.by import By
+
+def login(navegador, email, senha):
+    campo_email = navegador.find_element(By.NAME, "email")
+    campo_email.send_keys(email)
+
+    campo_senha = navegador.find_element(By.NAME, "password")
+    campo_senha.send_keys(senha)
+```
+
+```python
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
+from time import sleep
+from terminal import green, red
+
+def check_category_success(navegador, link_xpath, item_name):
+    try:
+        link = navegador.find_element(By.XPATH, link_xpath)
+        link.click()
+        sleep(2)
+        if item_name in navegador.page_source:
+            green(f"\nO acesso à categoria '{item_name}' foi bem-sucedido!")
+        else:
+            raise NoSuchElementException()
+    except NoSuchElementException:
+        red(f"\nO acesso à categoria '{item_name}' não foi bem-sucedido! (Categoria não encontrada)")        
+```
+```python
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
+from time import sleep
+from terminal import green, red
+
+def check_item_in_category(navegador, link_xpath, item_name, category_name):
+    try:
+        link = navegador.find_element(By.XPATH, link_xpath)
+        link.click()
+        sleep(3)
+        if item_name in navegador.page_source:
+            green(f"-► Item '{item_name}' encontrado na categoria '{category_name}'")
+        else:
+            raise NoSuchElementException()
+    except NoSuchElementException:
+        red(f"-► Item '{item_name}' não encontrado na categoria '{category_name}'")
+```
+```python
+# ID: ZBH-0012 - Filtrar por produto
+
+import sys
+from selenium.webdriver import Firefox
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+from check_category import check_category_success
+from check_item import check_item_in_category
+from login import login
+
+sys.path.append("projetols")
+
+navegador = Firefox()
+navegador.get("https://projetofinal.jogajuntoinstituto.org/")
+
+sleep(1)
+
+login(navegador, "leanderson.devlima@gmail.com", "jcjcjc@33")
+
+sleep(1)
+
+botao = navegador.find_element(By.XPATH, '//*[@id="root"]/main/form/button')
+botao.click()
+
+sleep(1)
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[1]/li', "Todos")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[3]/div[1]/img', "roupateste", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[4]/div[1]/img', "Cal", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[5]/div[1]/img', "Oculos SP", "Todos")
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[6]/div[1]/img', "Miçanga BA", "Todos")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[2]/li', "Roupas")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "roupateste", "Roupas")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[3]/li', "Calçados")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "Cal", "Calçados")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[4]/li', "Acessórios")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[1]/img', "Oculos SP", "Acessórios")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div/div[2]/img', "Miçanga BA", "Acessórios")
+
+check_category_success(navegador, '/html/body/div/header/section[2]/nav/ul/div[2]/div[1]/div[5]/li', "Elemento Inexistente")
+
+check_item_in_category(navegador, '/html/body/div/header/section[2]/div/div/div/div[7]/div[1]/img', "Acesorio3(nao existe)", "Todos")
+
+sleep(3)
+navegador.quit()
+```
+
+
+</details>
