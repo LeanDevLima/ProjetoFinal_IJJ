@@ -241,7 +241,7 @@ A automação de testes, realizada pela nossa squad, foi dividida em três etapa
 
 
 <details>
-<summary> Testes automatizados I | Programação Estruturada 🌟</summary>
+<summary>► Testes automatizados I | Programação Estruturada 🌟</summary>
 <p>
 
 Nessa abordagem fizemos uma automação com um estilo de programação estruturada:
@@ -343,7 +343,7 @@ Detalhes desse código e seus resultados estão na próxima etapa dos testes aut
 
 
 <details>
-<summary> Testes automatizados II | Programação Orientada a Objetos 🌟</summary>
+<summary>► Testes automatizados II | Programação Orientada a Objetos 🌟</summary>
 <p>
 
 Nessa abordagem usamos um estilo de programação Orientado a Objetos onde cada fução foi dividida em arquivos diferentes:
@@ -483,7 +483,7 @@ Resultado no terminal:
 </details>
 
 <details>
-<summary> Testes automatizados III | Biblioteca Behave 🌟</summary>
+<summary>► Testes automatizados III | Biblioteca Behave 🌟</summary>
 <p>
 
 Automação utilizando a biblioteca [Behave](https://behave.readthedocs.io/en/latest/).
